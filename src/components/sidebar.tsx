@@ -13,6 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { CreatePostModal } from "@/components/create-post-modal";
 import { cn } from "@/lib/utils";
 
 interface SidebarProps {
@@ -174,7 +175,9 @@ export function Sidebar({ children }: SidebarProps) {
           <div className="flex items-center justify-around px-1 py-1.5">
             <NavIcon item={navItems[0]} isActive={isActiveRoute(navItems[0].url)} />
             <NavIcon item={navItems[1]} isActive={isActiveRoute(navItems[1].url)} />
-            <CreatePostButton />
+            <div className="flex justify-center">
+              <CreatePostModal />
+            </div>
             <NavIcon item={navItems[2]} isActive={isActiveRoute(navItems[2].url)} />
             <SettingsMenu />
           </div>
@@ -200,7 +203,7 @@ export function Sidebar({ children }: SidebarProps) {
         <div className="flex-1 flex flex-col items-center justify-center gap-3">
           <NavIcon item={navItems[0]} isActive={isActiveRoute(navItems[0].url)} />
           <NavIcon item={navItems[1]} isActive={isActiveRoute(navItems[1].url)} />
-          <CreatePostButton />
+          <CreatePostModal />
           <NavIcon item={navItems[2]} isActive={isActiveRoute(navItems[2].url)} />
           <SettingsMenu />
         </div>
